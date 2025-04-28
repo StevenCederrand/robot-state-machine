@@ -10,11 +10,11 @@ public class RobotStateMachine {
     }
 
     public void left() {
-        this.dir.rotate90CounterClockwise();
+        this.dir.rotate(90);
     }
 
     public void right() {
-        this.dir.rotate90Clockwise();
+        this.dir.rotate(-90);
     }
 
     public void forward() {

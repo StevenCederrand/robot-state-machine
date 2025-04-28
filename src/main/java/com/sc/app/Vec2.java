@@ -26,21 +26,14 @@ public class Vec2 {
         this.y += oVec.y;
     }
 
-    public void rotate90CounterClockwise() {
-        final double n = Math.toRadians(90);
-        double rx = (this.x * Math.cos(n)) - (this.y * Math.sin(n));
-        double ry = (this.x * Math.sin(n)) + (this.y * Math.cos(n));
+    public void rotate(final double degrees) {
+        final double r = Math.toRadians(degrees);
+        double rx = (this.x * Math.cos(r)) - (this.y * Math.sin(r));
+        double ry = (this.x * Math.sin(r)) + (this.y * Math.cos(r));
         x = Math.rint(rx);
         y = Math.rint(ry);
     }
 
-    public void rotate90Clockwise() {
-        final double n = Math.toRadians(90);
-        double rx = (this.x * Math.cos(-n)) - (this.y * Math.sin(-n));
-        double ry = (this.x * Math.sin(-n)) + (this.y * Math.cos(-n));
-        x = Math.rint(rx);
-        y = Math.rint(ry);
-    }
 
     public boolean isOutsideOfBounds(final Vec2 bounds) {
         return this.x < 0 || this.x > bounds.x || this.y < 0 || this.y > bounds.y;
